@@ -24,7 +24,7 @@ public class SwitchCaseDemo {
 		
 		switch(choice)
 		{
-		case 1: System.out.println("Call routed to London");   break; 
+		case 1: System.out.println("Call routed to London"); break; 
 		
 		case 2: System.out.println("Call routed to Delhi");  break; 
 		
