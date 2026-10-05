@@ -27,6 +27,7 @@ public class Array2DDemo {
 		System.out.println(max);
 	}
 
+	
 }
 
 
@@ -37,3 +38,8 @@ public class Array2DDemo {
 //C10	20	30	
 //40	50	60	
 //70	80	90
+
+//row wise max number
+//max number from row 1 is 30
+//max number from row 2 is 51
+//max number from row 3 is 44
