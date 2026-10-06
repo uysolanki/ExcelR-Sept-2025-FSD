@@ -8,7 +8,34 @@ public class Student {
 	private String studentName;
 	private double percentage;
 	
-						//NoArgsConstructor
+	
+	
+	
+	public int getRollNumber() {
+		return rollNumber;
+	}
+
+	public void setRollNumber(int rollNumber) {
+		this.rollNumber = rollNumber;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public double getPercentage() {
+		return percentage;
+	}
+
+	public void setPercentage(double percentage) {
+		this.percentage = percentage;
+	}
+
+	//NoArgsConstructor
 	public Student()   	//this is a constructor
 	{					// it s a special type of method whose name is same as the class name
 						//it does not have any return type
@@ -44,7 +71,8 @@ public class Student {
 		System.out.println("Percentage is "+percentage);  //Percentage is 78.5
 	}
 	
-	public boolean searchByRollNumber(int rno)
+														//function overloading
+	public boolean search(int rno)           			//same name
 	{
 		if(rollNumber==rno)
 			return true;
@@ -52,7 +80,7 @@ public class Student {
 			return false;
 	}
 	
-	public boolean searchByStudentName(String searchedstudName)
+	public boolean search(String searchedstudName)		//diff parameters
 	{
 		if(studentName.equalsIgnoreCase(searchedstudName))
 			return true;

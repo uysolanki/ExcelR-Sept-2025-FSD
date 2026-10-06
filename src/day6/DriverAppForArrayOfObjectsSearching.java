@@ -33,7 +33,7 @@ public class DriverAppForArrayOfObjectsSearching {
 		int flag=0;
 		for(int i=0;i<fsdBatch.length;i++)
 		{
-			boolean result=fsdBatch[i].searchByRollNumber(searchedRno);
+			boolean result=fsdBatch[i].search(searchedRno);
 			if(result==true)
 			{
 				System.out.println("Student Found");
@@ -54,7 +54,7 @@ public class DriverAppForArrayOfObjectsSearching {
 		int flag1=0;
 		for(int i=0;i<fsdBatch.length;i++)
 		{
-			boolean result=fsdBatch[i].searchByStudentName(searchedName);
+			boolean result=fsdBatch[i].search(searchedName);
 			if(result==true)
 			{
 				System.out.println("Student Found");
