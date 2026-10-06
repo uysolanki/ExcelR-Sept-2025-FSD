@@ -43,4 +43,22 @@ public class Student {
 		System.out.println("Student name "+studentName);  //Student name Alice
 		System.out.println("Percentage is "+percentage);  //Percentage is 78.5
 	}
+	
+	public boolean searchByRollNumber(int rno)
+	{
+		if(rollNumber==rno)
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean searchByStudentName(String searchedstudName)
+	{
+		if(studentName.equalsIgnoreCase(searchedstudName))
+			return true;
+		else
+			return false;
+	}
+	
+	
 }
