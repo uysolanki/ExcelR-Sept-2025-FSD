@@ -8,7 +8,22 @@ public class Student {
 	private String studentName;
 	private double percentage;
 	
+						//NoArgsConstructor
+	public Student()   	//this is a constructor
+	{					// it s a special type of method whose name is same as the class name
+						//it does not have any return type
+		rollNumber=101;
+		studentName="Rohit";
+		percentage=50.0;
+		
+	}
 	
+	public Student(int a, String b, double c)		//AllArgsConsructor
+	{
+		rollNumber=a;
+		studentName=b;
+		percentage=c;
+	}
 	public void acceptStudent()
 	{
 		Scanner sc=new Scanner(System.in);
