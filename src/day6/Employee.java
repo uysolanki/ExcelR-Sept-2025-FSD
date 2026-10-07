@@ -10,8 +10,8 @@ public class Employee extends Person
 	protected double salary;
 	
 	public Employee() {}
-	public Employee(int eno, String desg, double salary) {
-		super();
+	public Employee(String name, int age, String address,int eno, String desg, double salary) {
+		super(name,  age,  address);     //parent class constructor
 		this.eno = eno;
 		this.desg = desg;
 		this.salary = salary;
@@ -20,6 +20,7 @@ public class Employee extends Person
 	
 	public void acceptEmployee()										  //total methods : 8
 	{
+		super.acceptPerson();
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Please enter employee ID"); 
 		eno=sc.nextInt();
@@ -33,6 +34,7 @@ public class Employee extends Person
 	
 	public void displayEmployee()
 	{
+		super.displayPerson();
 		System.out.println("Employee ID is "+eno); 
 		System.out.println("Designation is "+desg);  
 		System.out.println("Salary is "+salary);  

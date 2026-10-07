@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 public class DriverAppForArrayOfObjects2 {
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) 
+	{
+		int x=100;  //scope / life is only within the  { }  that is called local scope  only within the main method
 		Student fsdBatch[]=new Student[3];
 		
 		for(int i=0;i<fsdBatch.length;i++)
 		{
+			int y=200;  //life is only within the  { }  that is called local scope  only within the for loop
 			Scanner sc=new Scanner(System.in);
 			System.out.println("Please enter roll number");   //101   102   103
 			int a=sc.nextInt();
@@ -22,11 +24,17 @@ public class DriverAppForArrayOfObjects2 {
 			
 			fsdBatch[i]=new Student(a,b,c);
 		}
+		//System.out.println(y);
 			
 		
 		for(int i=0;i<fsdBatch.length;i++)
 			fsdBatch[i].displayStudent();
 
 	}
+	
+//	public static void test()
+//	{
+//		System.out.println(x);
+//	}
 
 }

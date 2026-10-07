@@ -2,7 +2,8 @@ package day6;
 
 public class DirectAccessDemo {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)    //Java Virtual Machine (JVM) it calls the main method
+	{
 	Student s1=new Student();
 	
 	s1.acceptStudent();
@@ -20,3 +21,6 @@ public class DirectAccessDemo {
 	}
 
 }
+
+//DirectAccessDemo s1=new DirectAccessDemo()
+//s1.main();

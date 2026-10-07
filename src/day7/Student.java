@@ -1,4 +1,4 @@
-package day6;
+package day7;
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ public class Student {
 	
 	
 	public int getRollNumber() {
-		return rollNumber;
+		return this.rollNumber;
 	}
 
 	public void setRollNumber(int rollNumber) {
@@ -21,7 +21,7 @@ public class Student {
 	}
 
 	public String getStudentName() {
-		return studentName;
+		return this.studentName;
 	}
 
 	public void setStudentName(String studentName) {
@@ -29,7 +29,7 @@ public class Student {
 	}
 
 	public double getPercentage() {
-		return percentage;
+		return this.percentage;
 	}
 
 	public void setPercentage(double percentage) {
@@ -40,42 +40,42 @@ public class Student {
 	public Student()   	//this is a constructor
 	{					// it s a special type of method whose name is same as the class name
 						//it does not have any return type
-		rollNumber=101;
-		studentName="Rohit";
-		percentage=50.0;
+		this.rollNumber=101;
+		this.studentName="Rohit";
+		this.percentage=50.0;
 		
 	}
 	
 	public Student(int a, String b, double c)		//AllArgsConsructor
 	{
-		rollNumber=a;
-		studentName=b;
-		percentage=c;
+		this.rollNumber=a;
+		this.studentName=b;
+		this.percentage=c;
 	}
 	public void acceptStudent()
 	{
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Please enter roll number");  //101
-		rollNumber=sc.nextInt();
+		this.rollNumber=sc.nextInt();
 		
 		System.out.println("Please enter Student name");  //Alice
-		studentName=sc.next();
+		this.studentName=sc.next();
 		
 		System.out.println("Please enter Percentage");  //78.5
-		percentage=sc.nextDouble();
+		this.percentage=sc.nextDouble();
 	}
 	
 	public void displayStudent()
 	{
-		System.out.println("Roll Number is "+rollNumber); //Roll Number is 101
-		System.out.println("Student name "+studentName);  //Student name Alice
-		System.out.println("Percentage is "+percentage);  //Percentage is 78.5
+		System.out.println("Roll Number is "+this.rollNumber); //Roll Number is 101
+		System.out.println("Student name "+this.studentName);  //Student name Alice
+		System.out.println("Percentage is "+this.percentage);  //Percentage is 78.5
 	}
 	
 														//function overloading
 	public boolean search(int rno)           			//same name
 	{
-		if(rollNumber==rno)
+		if(this.rollNumber==rno)
 			return true;
 		else
 			return false;
@@ -83,11 +83,23 @@ public class Student {
 	
 	public boolean search(String searchedstudName)		//diff parameters
 	{
-		if(studentName.equalsIgnoreCase(searchedstudName))
+		if(this.studentName.equalsIgnoreCase(searchedstudName))
 			return true;
 		else
 			return false;
 	}
 	
+	public static void displayPrincipalName()   //static method can access only static data
+	{											//staffroom can be accessed only by the staff
+												//student cannot have access to staffroom
+		System.out.println("Principal name is " + Student.principalName);
+		displayYearOfSchoolEstablishment();
+	}
+	
+	public static void displayYearOfSchoolEstablishment()   //static method can access only static data
+	{											//staffroom can be accessed only by the staff
+												//student cannot have access to staffroom
+		System.out.println("School Est year " + Student.schoolYearOfEstablishment);
+	}
 	
 }
