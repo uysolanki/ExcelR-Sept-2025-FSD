@@ -30,3 +30,7 @@ public class Example1 {
 
 
 // there are 3 integers in this sentance
+//InvalidNameException
+
+//accept name from user if the name contains a space Vi rat  , Ro hit
+//String name=sc.nextLine()
