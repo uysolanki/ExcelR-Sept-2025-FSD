@@ -13,6 +13,7 @@ public class ExceptionChaining {
 		catch(RuntimeException ex)
 		{
 			System.out.println(ex.getMessage());
+			System.out.println("Message to Developer, "+ex.getCause());
 		}
 		
 	}
@@ -35,8 +36,7 @@ public class ExceptionChaining {
 		}
 		catch(NullPointerException ex)
 		{
-			System.out.println("Message to Developer, pls check code for null pointer exception");
-			throw new RuntimeException("Message to the Customer : Invalid Data");
+			throw new RuntimeException("Message to the Customer : Invalid Data",ex);
 		}
 		
 	}
