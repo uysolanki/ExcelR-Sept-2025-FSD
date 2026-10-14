@@ -11,7 +11,7 @@ public class HashMapDemo6 {
 		String str="aaabbbccdd";
 		str=str.replaceAll("\\s+", "");
 	
-		StringBuffer result=new StringBuffer("");            //""
+		StringBuffer result=new StringBuffer("");            
 		Map<Character,Integer> hashmap=new LinkedHashMap();
 		for(char ch:str.toCharArray())							
 			hashmap.put(ch, hashmap.getOrDefault(ch, 0)+1);
@@ -23,8 +23,4 @@ public class HashMapDemo6 {
 		
 		System.out.println(result);
 	}
-
 }
-
-
-//a3b3c2d2
