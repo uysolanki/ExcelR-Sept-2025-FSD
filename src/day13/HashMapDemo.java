@@ -35,6 +35,16 @@ public class HashMapDemo {
 		}
 		
 		System.out.println("MaxSalary" +maxSalary);
+		
+		
+		Map<String,Double> hashmap2=new HashMap();
+		hashmap2.put("Alice", 800.0);
+		hashmap2.put("Ben",   900.0);  //old value
+		hashmap2.put("Chris", 1000.0);
+		
+		hashmap2.putIfAbsent("Tom",   1500.0); //new value  ->overwrite the valye
+		hashmap2.putIfAbsent("Alice",   1500.0);
+		System.out.println(hashmap2);
 	}
 
 }
