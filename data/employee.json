@@ -106,5 +106,14 @@
     "department": "HR",
     "joiningYear": 2007,
     "salary": 1800
+  },
+  {
+    "id": 13,
+    "name": "Monday",
+    "age": 47,
+    "gender": "female",
+    "department": "IT",
+    "joiningYear": 2007,
+    "salary": 1800
   }
 ]
