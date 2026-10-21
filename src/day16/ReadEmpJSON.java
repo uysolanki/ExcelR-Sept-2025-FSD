@@ -60,6 +60,31 @@ public class ReadEmpJSON {
 				System.out.println(deptWithMaxEmployees1 + " dept, has maximum employees");
 		
 		
+				//display year of joining wise with count of employees
+				employees.stream()
+				.collect(Collectors.groupingBy(Employee::getJoiningYear,Collectors.counting()))
+				.entrySet()
+				.stream()
+				.sorted(Map.Entry.<Integer, Long>comparingByValue().reversed())
+				.forEach(entry->System.out.println(entry.getKey() +"," +entry.getValue()));
+				
+				
+				
+				
+				//display year in which max employees joined 
+				Map.Entry<Integer, Long> hashmap=employees.stream()
+				.collect(Collectors.groupingBy(Employee::getJoiningYear,Collectors.counting()))
+				.entrySet()
+				.stream()
+				.sorted(Map.Entry.<Integer, Long>comparingByValue().reversed())
+				.findFirst()
+				.orElse(null);
+				
+				System.out.println("maximum number of employees joined in the year "+hashmap.getKey());
+			
+				
+				
+				
 		
 
 	}
