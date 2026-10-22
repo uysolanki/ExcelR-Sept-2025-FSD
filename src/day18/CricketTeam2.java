@@ -63,3 +63,6 @@ public class CricketTeam2 {
 
 //using Binarysearch
 //ans = 600  iteration count =11 : int players[]= {400,300,500,600}; int teamSize=3;
+
+//{ [ ( ) ] }  well formed
+//{ [ ( ] ) }  not well formed
