@@ -11,7 +11,6 @@ public class LengthOfMaxSubStringWithDistinctChars {
 	String str="abcbbcbdab";
 	int max=findMaxSubString(str);
 	System.out.println(max);
-
 	}
 
 	private static int findMaxSubString(String str) {					//[c,b]
@@ -33,5 +32,4 @@ public class LengthOfMaxSubStringWithDistinctChars {
 		}
 		return max;
 	}
-
 }

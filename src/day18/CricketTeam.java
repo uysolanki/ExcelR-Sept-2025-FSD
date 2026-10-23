@@ -14,10 +14,10 @@ public class CricketTeam {
 		private static int maximumTeams(int[] players, int teamSize) {
 			int sum=Arrays.stream(players).sum();		
 			int iterationCount=0;
-			for(int i=1;i<=sum;i++)    
-			{			
-				iterationCount++;
-				System.out.println("Iteration Count "+iterationCount);
+			for(int i=1;i<=sum;i++)    												//i-> 1 team pssible true
+			{																		//i-> 2 team pssible true
+				iterationCount++;													//i-> 3 team pssible true
+				System.out.println("Iteration Count "+iterationCount);				//i-> 4 team pssible false
 				if(!checkTeamPossible(players,teamSize,i))
 						return i-1;											
 			}	
