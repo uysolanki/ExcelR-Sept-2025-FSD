@@ -6,13 +6,13 @@ import java.util.Comparator;
 public class FractionalKnapSack {
 
 	public static void main(String[] args) {
-//		int values[]= {60, 100, 120};
-//		int wt[]= 	  {10, 20,  40};
-//		int capacity=50;
-		
 		int values[]= {60, 100, 120};
-		int wt[]= 	  {10, 20,  30};
+		int wt[]= 	  {10, 20,  40};
 		int capacity=50;
+		
+//		int values[]= {60, 100, 120};
+//		int wt[]= 	  {10, 20,  30};
+//		int capacity=50;
 		
 		int max=calculateMaxEarning(values,wt,capacity);
 		System.out.println(max);		//220
