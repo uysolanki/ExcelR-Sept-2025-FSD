@@ -25,5 +25,4 @@ public class BinarySearchUsingRecursion {
 		}
 		return -1;
 	}
-	
 }
