@@ -14,6 +14,10 @@ public class BinarySearchTree {
 		postOrder(root);
 		System.out.println("\n InOrder : ");
 		inOrder(root);
+		int n1=125;
+		int n2=75;
+		DNode lcm=leastCommonAncestor(n1,n2,root);
+		System.out.println(String.format("Least Common Ancestor of %d & %d is %d", n1,n2,lcm.data));
 	}
 
 	private static void inOrder(DNode root) {
@@ -22,7 +26,6 @@ public class BinarySearchTree {
 			inOrder(root.prev);
 			System.out.print(root.data+",");
 			inOrder(root.next);
-			
 		}
 		
 	}
@@ -98,5 +101,22 @@ public class BinarySearchTree {
 		}
 		
 	}
+	
+	
+	public static DNode leastCommonAncestor(int n1,int n2,DNode root)
+	{
+	if(root==null)
+	return null;
+
+	else if(n1>root.data && n2>root.data)
+	return leastCommonAncestor(n1,n2,root.next);
+
+	else if(n1<root.data && n2<root.data)
+	return leastCommonAncestor(n1,n2,root.prev);
+
+	else
+	return root;
+	}
 
 }
+//100,150,200,125,75
