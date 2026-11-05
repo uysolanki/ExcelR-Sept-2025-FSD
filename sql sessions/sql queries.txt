@@ -1,0 +1,217 @@
+
+create table 
+
+create table employee(
+eno int(5),
+ename varchar(15),
+salary numeric(5,2));
+
+
+tablename : supplier
+
+supplier_id			primary key auto_increment
+supplier_name       varchar
+supplier_contactnumber int  
+supplier_city       varchar  Pune,Mumbai,Delhi
+supplier_email      varchar  unique
+supplier_companyname	varchar
+min_order			check 1000
+
+
+insert into supplier(supplier_name,supplier_contactnumber,supplier_city,supplier_email,   supplier_companyname,	min_order)
+values             
+('Rakesh',      9890123123,'Pune',        'regal@gmail.com','Regal Traders',	1000);
+
+insert into supplier(supplier_name,supplier_contactnumber,supplier_email,   supplier_companyname,	min_order)
+values             
+('Rakesh',      9890123123,            'regal@gmail.com','Regal Traders',	1000),
+('Rakesh',      9890123123,            'regal@gmail.com','Regal Traders',	1000),
+('Rakesh',      9890123123,            'regal@gmail.com','Regal Traders',	1000),
+
+
+
+select ename,salary
+from employee1;
+
+alter table employee1
+modify salary numeric(7,2);  
+
+select * from employee1
+order by salary;
+
+select * from employee1
+order by salary desc;
+
+-- aggregate functions
+
+select min(salary) from employee1;
+select max(salary) from employee1;
+select avg(salary) from employee1;
+select sum(salary) from employee1;
+select count(*) from employee1;
+
+
+q1) display the minimum salary
+
+select min(salary) from employee1; //600
+
+q2) display the name of employee earning 600
+
+select ename 
+from employee1
+where salary=600      //Elcid
+
+
+q3) display the name of employee earning minimum salary
+
+select ename 
+from employee1
+where salary=(select min(salary) from employee1); //Elcid
+
+
+
+SELECT ename
+FROM emp
+WHERE city = 'Pune'
+OR city = 'Jaipur'
+
+
+SELECT ename
+FROM emp
+WHERE city in ('Pune','Jaipur');
+
+
+select city, count(*)
+from emp
+group by city
+having count(*) > 2;
+
+select ename
+from emp 
+where salary > ANY (select salary from emp where city = 'Pune');
+
+
+select ename
+from emp 
+where salary > ALL (select salary from emp where city = 'Pune');
+
+
+create table chiefminister(
+cmno int(5) primary key auto_increment,
+cmname varchar(20) not null,
+cmage int(3) check(cmage>0));
+
+create table state(
+sno int(5) primary key auto_increment,
+sname varchar(20) not null,
+capital varchar(20) not null,
+cmno int(5),
+foreign key(cmno) references  chiefminister(cmno));
+
+
+SELECT *
+FROM state
+JOIN chiefminister ON state.cmno = chiefminister.cmno
+
+
+filter the rows
+where sname = 'Gj';
+
+filter the columns
+SELECT cmnam
+
+SELECT cmname
+FROM state
+JOIN chiefminister ON state.cmno = chiefminister.cmno
+WHERE sname = 'Gj'
+
+
+create table dept(
+dno int(5) primary key auto_increment,
+dname varchar(20) not null,
+city varchar(20) not null);
+
+create table emp1(
+eno int(5) primary key auto_increment,
+ename varchar(20) not null,
+salary numeric(7,2),
+dno int(5),
+foreign key(dno) references  dept(dno));
+
+
+insert into dept(dname,city)
+values
+('IT','Hyderabad'),
+('Sales','Bengaluru'),
+('Mark','Chennai'),
+('HR','Noida');
+
+
+insert into emp1(ename,salary,dno)
+values
+('Alice',800.00,1),
+('Ben',  900.00,1),
+('Chris',700.00,2),
+('David',600.00,2),
+('Elcid',1100.00,3);
+
+
+SELECT *
+FROM dept
+JOIN emp1 ON dept.dno = emp1.dno
+
+
+
+SELECT ename
+FROM dept
+JOIN emp1
+USING ( dno )
+WHERE dname = 'IT'
+
+
+
+create table actor(
+ano int(5) primary key auto_increment,
+aname varchar(20) not null,
+age int(5));
+
+create table movie(
+mno int(5) primary key auto_increment,
+mname varchar(20) not null,
+ryear int(5));
+
+create table netflix(
+ano int(5),
+mno int(5),
+foreign key(ano) references  actor(ano),
+foreign key(mno) references  movie(mno));
+
+insert into actor(aname,age)
+values
+('SRK',61),
+('HR',51),
+('DP',40);
+
+
+insert into movie(mname,ryear)
+values
+('CE',2010),
+('RR',2007),
+('Don',2005);
+
+insert into netflix(ano,mno)
+values
+(1,1),
+(1,3),
+(3,1);
+
+
+select mname
+from actor
+join
+netflix
+using(ano)
+join
+movie
+using(mno)
+where aname = 'SRK';
