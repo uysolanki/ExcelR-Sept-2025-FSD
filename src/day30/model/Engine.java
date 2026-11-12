@@ -11,6 +11,7 @@ public class Engine {
 		this.engineType = engineType;
 		this.engineCC = engineCC;
 		this.engineLitres = engineLitres;
+		System.out.println("In Engine class All Args Constructor");
 	}
 	public String getEngineMfg() {
 		return engineMfg;

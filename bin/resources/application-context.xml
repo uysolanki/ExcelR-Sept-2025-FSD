@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="e1" class="day30.model.Engine">
+	<bean id="e1" class="day30.model.Engine" scope="prototype">
 		<constructor-arg value="Toyota"></constructor-arg>
 		<constructor-arg value="Petrol"></constructor-arg>
 		<constructor-arg value="2500"></constructor-arg>
@@ -15,7 +15,7 @@
 	</bean>
 	
 	
-	<bean id="e2" class="day30.model.Engine">
+	<bean id="e2" name="engine" class="day30.model.Engine" >
 		<property name="engineMfg">
 		<value>Honda</value>
 		</property>
@@ -32,4 +32,79 @@
 		<value>3.0</value>
 		</property>
 	</bean>
+	
+	<bean id="g1" class="day30.model.Gear">
+		<constructor-arg value="Tata"></constructor-arg>
+		<constructor-arg value="Automatic"></constructor-arg>
+		<constructor-arg value="8"></constructor-arg>
+	</bean>
+	
+	
+	
+	<bean id="g2" name="gear" class="day30.model.Gear" >
+		<property name="gearMfg">
+		<value>Volvo</value>
+		</property>
+		
+		<property name="gearType">
+		<value>Manual</value>
+		</property>
+		
+		<property name="Gearlever">
+		<value>12</value>
+		</property>
+	</bean>
+	
+	
+	<bean id="c1" class="day30.model.Car" scope="prototype">
+		<constructor-arg value="Innova"></constructor-arg>
+		<constructor-arg value="Toyota"></constructor-arg>
+		<constructor-arg value="White"></constructor-arg>
+		<constructor-arg value="300.0"></constructor-arg>
+		<constructor-arg ref="e1"></constructor-arg>
+		<constructor-arg ref="g1"></constructor-arg>
+	</bean>
+	
+	
+	
+	<bean id="c2" class="day30.model.Car">
+		<property name="carModel">
+		<value>City</value>
+		</property>
+		
+		<property name="carMfg">
+		<value>Honda</value>
+		</property>
+		
+		<property name="carColor">
+		<value>Black</value>
+		</property>
+		
+		<property name="carPrice">
+		<value>200.0</value>
+		</property>
+		
+		<property name="engine" ref="e2"></property>
+		<property name="gear" ref="g2"></property>
+		
+	</bean>
+	
+	<bean id="c3" class="day30.model.Car" autowire="byName">
+		<property name="carModel">
+		<value>City</value>
+		</property>
+		
+		<property name="carMfg">
+		<value>Honda</value>
+		</property>
+		
+		<property name="carColor">
+		<value>Black</value>
+		</property>
+		
+		<property name="carPrice">
+		<value>200.0</value>
+		</property>		
+	</bean>
+	
 </beans>
