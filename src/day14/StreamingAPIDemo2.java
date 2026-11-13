@@ -3,6 +3,7 @@ package day14;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamingAPIDemo2 {
 
@@ -12,7 +13,7 @@ public class StreamingAPIDemo2 {
 		
 		List<Integer> monthLens=months.stream()
 		.map(m->m.length())
-		.toList();
+		.collect(Collectors.toList());
 		
 		System.out.println(monthLens);
 		

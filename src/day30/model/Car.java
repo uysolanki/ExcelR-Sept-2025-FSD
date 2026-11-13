@@ -1,12 +1,20 @@
 package day30.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class Car {
 	private String carModel;
 	private String carMfg;
 	private String carColor;
 	private double carPrice;
 	
+	@Autowired
+	@Qualifier("e1")
 	Engine engine;
+	
+	@Autowired
+	@Qualifier("g2")
 	Gear gear;
 	
 	public Car() {}
